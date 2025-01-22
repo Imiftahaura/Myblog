@@ -9,6 +9,10 @@ Route::get('/', function () {
 
 Route::resource('/posts', \App\Http\Controllers\PostController::class);
 
-route::get('index', function(){
-    return view('index'). view('content') ;
-});
+// route::get('index', function(){
+//     return view('index'). view('content') ;
+// });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
